@@ -1,0 +1,47 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'dist/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Verify app and catalog tooling
+        run: |
+          node --test --test-reporter=dot test_catalog_filters.js
+          python3 -m unittest -q test_sync_catalog
+          node -e 'const fs=require("fs"),vm=require("vm"),assert=require("node:assert/strict");const catalog=JSON.parse(fs.readFileSync("dist/opportunities.json","utf8"));const context={window:{}};vm.runInNewContext(fs.readFileSync("dist/opportunities.js","utf8"),context);assert.equal(JSON.stringify(catalog),JSON.stringify(context.window.OPPORTUNITY_CATALOG));assert.equal(new Set(catalog.entries.map(e=>e.identity)).size,catalog.entries.length);'
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload public app only
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+  deploy:
+    runs-on: ubuntu-24.04
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

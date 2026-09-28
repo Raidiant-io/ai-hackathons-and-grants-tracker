@@ -16,7 +16,21 @@ python3 -m http.server 8766 --bind 127.0.0.1 --directory dist
 
 Open http://127.0.0.1:8766/. Reuse an existing healthy server; do not stop an
 unrelated service occupying the port. Opening `dist/index.html` directly also
-works. No build, dependencies, cloud service or hosted deployment is required.
+works. No build, dependencies or cloud service is required to run locally.
+
+## GitHub Pages
+
+Live app: https://raidiant-io.github.io/ai-hackathons-and-grants-tracker/
+
+`.github/workflows/pages.yml` tests the app and deploys only `dist/` after changes
+to that folder reach `main`. It also supports manual workflow dispatch. Relative
+asset paths work under the repository's Pages URL. Private posting inputs never
+reach the deployment artifact.
+
+After a scheduled catalog sync, review and commit just `dist/opportunities.json`
+and `dist/opportunities.js`, push to `main`, and confirm the Pages deployment
+and live catalog match. Preserve unrelated/staged changes; do not force-push to
+resolve conflicts. Publishing failures do not justify reposting Discord messages.
 
 ## Location filters
 

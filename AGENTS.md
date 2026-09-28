@@ -1,6 +1,7 @@
 # AI Hackathons & Grants Tracker
 
-Local-first static app in `dist/`. Run with `npm start`; no hosted publishing.
+Local-first static app in `dist/`. Run with `npm start`. GitHub Pages publishes
+only `dist/` through `.github/workflows/pages.yml` on relevant pushes to `main`.
 Keep the table, calendar, sorting, and archive toggle working together.
 
 ## Catalog contract
@@ -14,7 +15,13 @@ or delivery, read `docs/research-policy.md` for that separate policy.
 equivalent companion JS. Only accepted Discord records belong in the catalog;
 evidence-backed warnings remain separate. It must never modify posting history.
 No credentials, private registry, posting batches, local machine paths, hosting
-metadata or Discord message identifiers belong in Git or the public catalog.
+private hosting metadata or Discord message identifiers belong in Git or the
+public catalog. GitHub Pages workflow configuration is public and versioned.
+
+After a scheduled sync, publish only the two generated catalog files in a scoped
+commit and push to `main`. Preserve unrelated changes and staged files; stop on
+merge/push conflicts rather than force-push or reset. Confirm deployment success
+and live catalog freshness; report failures without resending Discord entries.
 
 ## Verification
 
