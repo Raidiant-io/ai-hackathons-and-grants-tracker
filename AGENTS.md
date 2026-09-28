@@ -14,7 +14,7 @@ or delivery, read `docs/research-policy.md` for that separate policy.
 `sync_catalog.py` reads external private inputs and writes public JSON plus its
 equivalent companion JS. Only accepted Discord records belong in the catalog;
 evidence-backed warnings remain separate. It must never modify posting history.
-No credentials, private registry, posting batches, local machine paths, hosting
+No credentials, private registry, posting batches, local machine paths,
 private hosting metadata or Discord message identifiers belong in Git or the
 public catalog. GitHub Pages workflow configuration is public and versioned.
 
