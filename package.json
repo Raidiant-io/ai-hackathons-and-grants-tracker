@@ -1,0 +1,13 @@
+{
+  "name": "ai-hackathons-and-grants-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-first explorer for software-building opportunities",
+  "scripts": {
+    "start": "python3 -m http.server 8766 --bind 127.0.0.1 --directory dist",
+    "test:filters": "node --test --test-reporter=dot test_catalog_filters.js",
+    "test:catalog": "python3 -m unittest -q test_sync_catalog.TrustCatalogTests",
+    "test:participation": "python3 -m unittest -q test_sync_catalog.ParticipationTests"
+  },
+  "engines": {"node": ">=20"}
+}
