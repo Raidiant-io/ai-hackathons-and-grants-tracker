@@ -1,0 +1,95 @@
+{
+  "openai-codex-open-source-fund": {
+    "max_award_amount": 25000,
+    "max_award_currency": "USD",
+    "max_award_kind": "credits",
+    "max_award_basis": "Up to USD 25,000 API credits per project grant, not the USD 1 million program pool. Not cash.",
+    "max_award_evidence_url": "https://openai.com/form/codex-open-source-fund/",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "goose-open-source-agent-grants": {
+    "max_award_amount": 100000,
+    "max_award_currency": "USD",
+    "max_award_kind": "cash",
+    "max_award_basis": "USD 100,000 for one 12-month project grant, paid against milestones. Discretionary renewals and separate project applications are not included.",
+    "max_award_evidence_url": "https://goose-docs.ai/grants/",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "inference-net-ai-compute-grants": {
+    "max_award_amount": 10000,
+    "max_award_currency": "USD",
+    "max_award_kind": "credits",
+    "max_award_basis": "Up to USD 10,000 in free compute for one project grant. Not cash.",
+    "max_award_evidence_url": "https://inference.net/grants/",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "devpost-build-with-ai-basics-2026": {
+    "max_award_amount": 1250,
+    "max_award_currency": "USD",
+    "max_award_kind": "cash",
+    "max_award_basis": "First place is USD 1,250. Rules allow only one ranked prize per project; the USD 2,500 pool is not one entrant's award. Unpriced participation badges and publicity are excluded.",
+    "max_award_evidence_url": "https://learn-ai-basics.devpost.com/rules",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "osff-small-scale-high-impact-firmware-contributions-2026-2": {
+    "max_award_amount": 7500,
+    "max_award_currency": "EUR",
+    "max_award_kind": "cash",
+    "max_award_basis": "Upper end of the published EUR 1,000–7,500 funding range for one selected proposal; discretionary award, not guaranteed funding.",
+    "max_award_evidence_url": "https://www.osfw.foundation/funding/small-scale-high-impact-firmware-contributions-2026-2/",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "aws-ircai-compute-for-climate-fellowship-2026": {
+    "max_award_amount": 200000,
+    "max_award_currency": "USD",
+    "max_award_kind": "credits",
+    "max_award_basis": "Up to USD 200,000 AWS credits per selected startup, not the USD 2 million cohort pool. Not cash; unselected-applicant credits are an alternative benefit, not an additional winner award.",
+    "max_award_evidence_url": "https://aws.amazon.com/aws-startups/insights/aws-opens-applications-for-the-compute-for-climate-fellowship-2026/",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "hacker-initiative-signal-noise-grant-2026": {
+    "max_award_amount": 25000,
+    "max_award_currency": "USD",
+    "max_award_kind": "cash",
+    "max_award_basis": "Upper end of the published USD 5,000–25,000 grant range for one proposal. Awards may be below the requested amount.",
+    "max_award_evidence_url": "https://hackerinitiative.org/",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "digital-science-catalyst-grant-agentic-workflows-2026": {
+    "max_award_amount": 25000,
+    "max_award_currency": "GBP",
+    "max_award_kind": "cash",
+    "max_award_basis": "At most GBP 25,000 for a proposal. The organizer may split this award across recipients, so a recipient could receive less.",
+    "max_award_evidence_url": "https://www.digital-science.com/about-us/investment/catalyst-grant/",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "nlnet-ois-restack-first-open-call-2026": {
+    "max_award_amount": 50000,
+    "max_award_currency": "EUR",
+    "max_award_kind": "cash",
+    "max_award_basis": "Upper end of EUR 5,000–50,000 sought for one initial proposal. Subsequent discretionary scale-up awards are outside this entry's ceiling.",
+    "max_award_evidence_url": "https://nlnet.nl/restack/",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "nlnet-ois-codesupply-first-open-call-2026": {
+    "max_award_amount": 50000,
+    "max_award_currency": "EUR",
+    "max_award_kind": "cash",
+    "max_award_basis": "First proposal allows at most EUR 50,000. The EUR 60,000 lifetime applicant cap includes later separate proposals and is not available through this one entry.",
+    "max_award_evidence_url": "https://nlnet.nl/codesupply/faq/",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "amazon-build-ship-shape-developer-hackathon-2026": {
+    "max_award_amount": 50000,
+    "max_award_currency": "USD",
+    "max_award_kind": "mixed",
+    "max_award_basis": "One Fire TV or Alexa+ first-place award (25,000 cash + 15,000 AWS credits), plus one mini-challenge (5,000 cash + 5,000 credits): 30,000 cash and 20,000 nominal credits. Rules permit only one track and one mini-challenge per project. Separate submissions, limited build credits and unpriced publicity are excluded.",
+    "max_award_evidence_url": "https://amazonappdev2026.devpost.com/rules",
+    "max_award_verified_at": "2026-09-28"
+  },
+  "principia-ai-compute-grants": {
+    "max_award_amount": null,
+    "max_award_basis": "USD 1,000–10,000 is a typical grant range, not a stated maximum; a per-entry ceiling remains unverified.",
+    "max_award_verified_at": "2026-09-28"
+  }
+}

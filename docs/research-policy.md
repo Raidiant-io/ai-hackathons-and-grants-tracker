@@ -61,3 +61,43 @@ the current research scope. All locations includes every normal catalog entry.
 Insufficient format evidence stays under Format not stated, and unspecified
 physical countries remain selectable as Not stated. Keep the Chile/Europe
 preference in discovery and delivery policy, not hard-coded in the app filters.
+
+## Per-entry award
+
+For every researched normal entry, collect a separate ceiling for a single
+project/proposal/report submitted by one eligible solo entrant or team of up to
+five, before taxes. Keep `reward` as the advertised pool/bundle description.
+Record these fields in the saved Discord candidate batch, including explicit
+nulls when the ceiling is unresolved; the site synchronizer preserves them:
+
+- `max_award_amount`: JSON number or null, never formatted text.
+- `max_award_currency`: currency code (e.g. USD, EUR, GBP, USDC) or null.
+- `max_award_kind`: cash, credits, crypto, mixed, or in_kind; null if unresolved.
+- `max_award_basis`: short calculation, scope, restrictions and uncertainty.
+- `max_award_evidence_url`: primary rules/prize/funding page, or null if unresolved.
+- `max_award_verified_at`: assessment date as YYYY-MM-DD.
+
+Read the individual prize amounts and prize-stacking rules. For mutually exclusive
+prizes use the largest eligible award. Sum only amounts that the same entry can
+win together, in the same currency, with official evidence of stacking. Count a
+team award once, not once per member. Apply any verified per-member caps using
+the maximum eligible team size up to five. Exclude student-only rewards and
+separate applications, renewals, unrelated tracks and registration/build credits
+from a winning entry's ceiling. Explain conditional bonuses, milestone payouts
+and restricted award categories in the basis.
+
+Use organizer-stated nominal values for credits or equipment; label them noncash.
+Keep unpriced perks in reward details without assigning a guessed value. A typical
+grant range, aggregate fund or unsupported stacking claim cannot establish a
+ceiling: amount/currency/kind stay null, with the reason in the basis. Unknown
+does not mean zero. Do not parse a number out of the reward description or infer
+missing denominations, payout types, eligibility or prize compatibility.
+
+The site sorts numeric ceilings within currency groups without FX conversion;
+unverified entries stay last in both directions. `data/max-awards.json` contains
+public evidence-backed backfills for already accepted entries. Newer saved
+assessments supersede these atomically, including an explicit unknown assessment
+that clears a former amount. Only registry-accepted entries reach the catalog;
+backfills never create new entries or trigger Discord reposts. Complete this step
+when each candidate has either a sourced numeric ceiling with basis/date or an
+explicit unresolved assessment. Include this distinction in scan reporting.

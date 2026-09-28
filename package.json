@@ -6,8 +6,9 @@
   "scripts": {
     "start": "python3 -m http.server 8766 --bind 127.0.0.1 --directory dist",
     "test:filters": "node --test --test-reporter=dot test_catalog_filters.js",
-    "test:catalog": "python3 -m unittest -q test_sync_catalog.TrustCatalogTests",
-    "test:participation": "python3 -m unittest -q test_sync_catalog.ParticipationTests"
+    "test:catalog": "python3 -m unittest -q test_sync_catalog.TrustCatalogTests test_sync_catalog.AwardCatalogTests",
+    "test:participation": "python3 -m unittest -q test_sync_catalog.ParticipationTests",
+    "test:rewards": "node --test --test-reporter=dot test_catalog_rewards.js && python3 -m unittest -q test_rewards"
   },
   "engines": {"node": ">=20"}
 }

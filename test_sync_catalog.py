@@ -115,5 +115,38 @@ class TrustCatalogTests(unittest.TestCase):
             self.assertNotIn("discord_message_id", result["trust_concerns"][0])
 
 
+class AwardCatalogTests(unittest.TestCase):
+    def test_saved_assessments_supersede_backfills_without_adding_entries_or_mutating_history(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            registry = root / 'private-history.json'
+            registry.write_text(json.dumps({'posted':[{'identity':'build', 'name':'Build', 'url':'https://example.org'}]}))
+            original = registry.read_bytes()
+            report = root / 'report-2026-09-28.md'
+            report.write_text('## Open now\n\n| Build | Hackathon | Oct 1 | Oct 1 | Oct 2 | Solo | Remote | $1,000 pool | Link |\n')
+            award = dict(max_award_amount=500, max_award_currency='USD', max_award_kind='cash',
+                         max_award_basis='Top prize; no stacking.', max_award_evidence_url='https://example.org/rules',
+                         max_award_verified_at='2026-09-27')
+            backfills = root / 'awards.json'
+            backfills.write_text(json.dumps({'build':award, 'not-posted':award}))
+            batches = root / 'batches'
+            batches.mkdir()
+            batch = batches / 'candidate.json'
+            batch.write_text(json.dumps({'opportunities':[dict(identity='build', **{**award, 'max_award_amount':750, 'max_award_verified_at':'2026-09-28'})]}))
+            result = sync_catalog.build(report, registry, batches, backfills)
+            self.assertEqual([entry['identity'] for entry in result['entries']], ['build'])
+            entry = result['entries'][0]
+            self.assertEqual(entry['max_award_amount'], 750)
+            self.assertEqual(entry['reward'], '$1,000 pool')
+            self.assertEqual(entry['max_award_evidence_url'], award['max_award_evidence_url'])
+            batch.write_text(json.dumps({'opportunities':[{'identity':'build', 'max_award_amount':None,
+                                                          'max_award_basis':'Stacking is now unresolved.', 'max_award_verified_at':'2026-09-29'}]}))
+            entry = sync_catalog.build(report, registry, batches, backfills)['entries'][0]
+            self.assertIsNone(entry['max_award_amount'])
+            self.assertIsNone(entry['max_award_currency'])
+            self.assertIsNone(entry['max_award_evidence_url'])
+            self.assertEqual(registry.read_bytes(), original)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -16,6 +16,7 @@ from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
 from participation import classify
+from rewards import select_award
 
 
 SITE_DIR = Path(__file__).resolve().parent
@@ -23,6 +24,7 @@ WORK_DIR = SITE_DIR.parent.parent
 POSTER_DIR = WORK_DIR / "work" / "discord-opportunity-poster"
 REGISTRY = POSTER_DIR / "posted_opportunities.json"
 DEFAULT_OUTPUT = SITE_DIR / "dist" / "opportunities.json"
+AWARD_ASSESSMENTS = SITE_DIR / "data" / "max-awards.json"
 MONTHS = {
     "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
     "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12,
@@ -149,7 +151,8 @@ def date_key(label: str) -> str | None:
     return f"{year:04d}-{month:02d}-{day:02d}"
 
 
-def build(report_path: Path, registry_path: Path | None = None, batches_dir: Path | None = None) -> dict:
+def build(report_path: Path, registry_path: Path | None = None, batches_dir: Path | None = None,
+          awards_path: Path | None = None) -> dict:
     registry_path = registry_path or REGISTRY
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
     posted = registry["posted"]
@@ -157,6 +160,7 @@ def build(report_path: Path, registry_path: Path | None = None, batches_dir: Pat
     if not isinstance(concerns, list):
         raise ValueError("Invalid trust-concerns registry")
     batches = saved_batches(batches_dir, registry_path)
+    awards = json.loads((awards_path or AWARD_ASSESSMENTS).read_text(encoding="utf-8"))
     report = report_path.read_text(encoding="utf-8")
     active_entries = report_entries(report)
     by_identity: dict[str, list[dict]] = {}
@@ -179,6 +183,7 @@ def build(report_path: Path, registry_path: Path | None = None, batches_dir: Pat
             for key in DETAIL_FIELDS:
                 if detail.get(key) is not None and detail.get(key) != "":
                     record[key] = detail[key]
+        record.update(select_award(awards.get(str(prior.get("identity", "")), {}), *details))
         if details:
             detailed_count += 1
         report_item = matching_report_entry(record, active_entries)

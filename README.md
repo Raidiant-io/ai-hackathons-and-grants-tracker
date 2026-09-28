@@ -50,6 +50,20 @@ restriction. See [the research policy](docs/research-policy.md).
 
 ## Catalog and sync
 
+The sortable **Max per entry** column is a numeric ceiling for one solo/team
+submission, not the prize pool. Cash and nominal credits are labelled separately;
+mixed awards explain their components in the expanded details, alongside the
+official evidence and assessment date. Unpriced perks remain in Reward details.
+Unverified amounts stay last in either direction. Currency groups remain separate
+without pretending to convert currencies. The first click shows highest first
+within each currency; click again for lowest first.
+
+The public `data/max-awards.json` supplies verified backfills for existing entries.
+Saved batches supply new assessments; the newest dated assessment wins as a whole,
+including an explicit unknown that clears a stale ceiling. Missing values remain
+null; reward descriptions are never parsed into numeric amounts. The collection
+contract and valuation rules live in [the research policy](docs/research-policy.md#per-entry-award).
+
 `dist/opportunities.json` is the public catalog. The equivalent
 `dist/opportunities.js` renders it at runtime, including when opened from a local
 file where browsers block JSON fetches. No entries are hard-coded in HTML.
@@ -89,6 +103,7 @@ also archive after that UTC date ends; confirm exact timezones with the organize
 npm run test:filters        # Generic participation/country behavior
 npm run test:participation  # Conservative location metadata
 npm run test:catalog        # Private inputs → public catalog/companion script
+npm run test:rewards        # Per-entry assessment validity and numeric sorting
 ```
 
 UI wiring is additionally verified in the local browser. The repository does not
