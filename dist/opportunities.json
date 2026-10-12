@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T08:17:36.552994+00:00",
+  "updated_at": "2026-10-12T08:20:42.959693+00:00",
   "report_date": "2026-10-12",
   "entries": [
     {
@@ -1281,7 +1281,7 @@
       "type": "Hackathon",
       "fit": "Open-source LLM · red teaming · localization",
       "dates": "Oct 1–16",
-      "apply_by": "Open; cutoff not stated",
+      "apply_by": "Open; separate cutoff not stated",
       "submit_by": "Oct 16, 12:00 CEST",
       "eligibility": "Adults; solo/1–5",
       "location": "Online",
@@ -6869,9 +6869,9 @@
       "posted_at": "2026-09-30T08:09:06.687572+00:00",
       "type": "Hackathon",
       "fit": "AI agents, AMD GPUs, ROCm and developer tooling",
-      "dates": "Online Oct 12–18; optional onsite Oct 17–18 in Rome, Milan or Imperia, Italy",
-      "apply_by": "Oct 12, 2026, 15:00 UTC (official live schedule)",
-      "submit_by": "Oct 18, 2026, 14:00 UTC (event schedule; live dashboard says 15:00 UTC)",
+      "dates": "Online Oct 12–18; kickoff Oct 12, 16:00 WEST; optional onsite Oct 17–18 in Rome, Milan or Imperia, Italy",
+      "apply_by": "Sign-up open; separate registration cutoff not stated",
+      "submit_by": "Oct 18, 2026, 11:00 WEST / 10:00 UTC (event schedule)",
       "eligibility": "Developers, founders and builders; solo or teams of 1–6, with teams of up to five in scope; AMD Developer Program signup required",
       "location": "Remote online participation; optional onsite phase in Rome, Milan or Imperia, Italy; travel/accommodation not covered",
       "reward": "$12,000+ mixed sponsor headline: AMD/Google prize pools, Evolus plan/credits, AirPods; single-entry total not stated",
@@ -6898,7 +6898,7 @@
       "max_award_verified_at": "2026-10-05",
       "status": "open",
       "rolling": false,
-      "deadline_date": "2026-10-12"
+      "deadline_date": null
     },
     {
       "identity": "armoriq-flow-state-hackathon-2026",
