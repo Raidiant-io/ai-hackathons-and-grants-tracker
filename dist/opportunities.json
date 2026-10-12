@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-12T08:13:36.300194+00:00",
+  "updated_at": "2026-10-12T08:17:36.552994+00:00",
   "report_date": "2026-10-12",
   "entries": [
     {
@@ -6785,9 +6785,9 @@
       "posted_at": "2026-09-30T08:09:05.373765+00:00",
       "type": "Hackathon",
       "fit": "AI agents and explainable reasoning",
-      "dates": "Registration opened Aug 14; build Oct 15–20, 2026; results Oct 30",
-      "apply_by": "Oct 13, 2026, 00:00 UTC",
-      "submit_by": "Oct 20, 2026, 23:45 UTC",
+      "dates": "Registration opened Aug 14; build Oct 22–27, 2026; results date not stated on current page",
+      "apply_by": "Oct 22, 2026, 23:59 UTC",
+      "submit_by": "Oct 27, 2026, 23:45 UTC",
       "eligibility": "Worldwide, age 16+; solo or teams of 1–5; organizer/judging-sponsor employees ineligible for cash",
       "location": "Remote — fully online worldwide, including judging and results",
       "reward": "$15,000 cash plus $5,000 shared in-kind; per-team cap not stated",
@@ -6812,7 +6812,7 @@
       "max_award_verified_at": "2026-10-05",
       "status": "open",
       "rolling": false,
-      "deadline_date": "2026-10-13"
+      "deadline_date": "2026-10-22"
     },
     {
       "identity": "jigjoy-3alet-hackathon-2026",
