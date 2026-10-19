@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T08:34:13.249607+00:00",
+  "updated_at": "2026-10-19T08:37:55.634419+00:00",
   "report_date": "2026-10-19",
   "entries": [
     {
@@ -7321,7 +7321,7 @@
       "submit_by": "Dec 6, exact hour not stated",
       "eligibility": "Open across India to public builders including early-career developers; solo or teams of 2–4; no enrollment requirement published.",
       "location": "Remote within India",
-      "reward": "₹5,000 top monetary prize; certificates/perks ancillary",
+      "reward": "₹5,000 top prize; payout medium not stated; certificates/perks ancillary",
       "description": "Build a real-world agent, automation or LLM application through mentored online rounds.",
       "team_min": 1,
       "team_max": 4,
@@ -7335,11 +7335,11 @@
       "participation_note": "Organizer says participant competition and mentoring are fully online and open to all India; precise payout method not stated.",
       "participation_evidence_url": "https://hackathon.homingo.co.in/",
       "attendance_countries": [],
-      "max_award_amount": 5000,
-      "max_award_currency": "INR",
-      "max_award_kind": "cash",
-      "max_award_basis": "Organizer-advertised first prize of ₹5,000; transfer/payout mechanics not stated.",
-      "max_award_evidence_url": "https://hackathon.homingo.co.in/",
+      "max_award_amount": null,
+      "max_award_currency": null,
+      "max_award_kind": null,
+      "max_award_basis": "Organizer advertises a ₹5,000 top prize but does not state whether it is cash, credits or another payout medium; numeric sortable award is unresolved.",
+      "max_award_evidence_url": null,
       "max_award_verified_at": "2026-10-19",
       "status": "open",
       "rolling": false,
